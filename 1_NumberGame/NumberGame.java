@@ -17,15 +17,16 @@ public class NumberGame {
 
             System.out.println("\nYou have " + attemptsAllowed + " tries to guess a number between 1 and 100.");
 
-            // First round of guessing
+
+
             for (int attempt = 1; attempt <= attemptsAllowed; attempt++) {
                 System.out.print("Attempt " + attempt + ": Enter your guess: ");
 
-                // check if user entered an integer
+                
                 if (!input.hasNextInt()) {
                     System.out.println("That's not a valid number. Please type an integer.");
-                    input.next(); // discard wrong input
-                    attempt--; // don't count this as a used attempt
+                    input.next(); 
+                    attempt--; 
                     continue;
                 }
 
@@ -47,7 +48,7 @@ public class NumberGame {
                 System.out.println("Sorry! You used all your attempts. The correct number was " + secretNumber + ".");
             }
 
-            // Ask for play again
+         
             System.out.print("Do you want to play again? (y/n): ");
             String answer = input.next().trim();
             playAgain = answer.equalsIgnoreCase("y");
@@ -58,7 +59,7 @@ public class NumberGame {
     }
     }
 
-    //To get a random number between min and max
+   
     public static int getRandomNumber(int min, int max) {
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
